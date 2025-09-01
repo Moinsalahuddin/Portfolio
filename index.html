@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+{{ ... }}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moinuddin — Portfolio</title>
+  <meta name="description" content="Moinuddin | Software Engineering student building web & mobile solutions with Laravel, PHP, Flutter, ASP.NET, MySQL, and JavaScript." />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              500: '#6366F1',
+              600: '#4F46E5',
+              700: '#4338CA',
+            },
+          },
+          boxShadow: {
+            glow: '0 0 0 2px rgba(99,102,241,0.35), 0 0 30px rgba(99,102,241,0.25)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+{{ ... }}
+<body class="min-h-screen bg-gradient-to-b from-black via-indigo-950 to-black text-gray-200 antialiased">
+  <!-- Header / Navbar -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all">
+    <div class="glass-nav max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-600 to-brand-700 flex items-center justify-center text-xl font-black shadow-glow transition-transform group-hover:scale-105">M</div>
+          <span class="sr-only">Moinuddin</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-2 text-sm">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#career" class="nav-link">Career</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-toggle" class="md:hidden p-2 rounded-lg hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-brand-600" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <div class="grid gap-1">
+          <a href="#home" class="nav-link block">Home</a>
+          <a href="#about" class="nav-link block">About</a>
+          <a href="#career" class="nav-link block">Career</a>
+          <a href="#services" class="nav-link block">Services</a>
+          <a href="#projects" class="nav-link block">Projects</a>
+          <a href="#testimonials" class="nav-link block">Testimonials</a>
+          <a href="#blog" class="nav-link block">Blog</a>
+          <a href="#contact" class="nav-link block">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spacer for fixed header -->
+  <div class="h-16 md:h-20" aria-hidden="true"></div>
+
+  <!-- Hero -->
+  <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal slide-left">
+        <p class="text-brand-400 font-semibold tracking-wide">Hi, I’m</p>
+        <h1 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+          Moinuddin <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">👋</span>
+        </h1>
+        <p class="mt-4 text-lg text-gray-300">A passionate Software Engineering student & future top Software Engineer in the world.</p>
+        <p class="mt-2 text-gray-400">I build impactful web & mobile solutions with Laravel, PHP, Flutter, ASP.NET, MySQL, and JavaScript.</p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="btn-primary">See My Work</a>
+          <a href="#contact" class="btn-secondary">Contact Me</a>
+          <a href="assets/Moinuddin-CV.pdf" download class="btn-ghost">Download CV</a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-3 gap-4">
+          <div class="stat-card">
+            <div class="text-2xl font-bold">10+ </div>
+            <div class="text-gray-400 text-sm">Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold">4+ </div>
+            <div class="text-gray-400 text-sm">Domains</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold">100% </div>
+            <div class="text-gray-400 text-sm">Commitment</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal fade-up">
+        <div class="relative">
+          <div class="absolute -inset-1 bg-gradient-to-tr from-brand-600/40 to-indigo-400/30 blur-2xl rounded-2xl"></div>
+          <div class="relative glass p-4 rounded-2xl w-full h-64 md:h-96 flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Coding illustration" class="w-full h-full object-cover rounded-xl opacity-90" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title reveal fade-up">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-6 reveal fade-up">
+        <div class="glass p-6 rounded-2xl">
+          <p class="text-gray-300">I’m Moinuddin, a Software Engineering student at Aptech. I work with modern web & mobile technologies like JavaScript, PHP (Laravel), Flutter, ASP.NET, and MySQL.</p>
+          <p class="mt-3 text-gray-300">My goal is simple: to grow into one of the best software engineers in the world. Failure doesn’t stop me — it shapes me.</p>
+          <a href="assets/Moinuddin-CV.pdf" download class="btn-primary mt-5 inline-block">Download CV</a>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="glass p-5 rounded-2xl reveal fade-up">
+            <h3 class="font-semibold text-white">Education</h3>
+            <p class="text-gray-400 text-sm mt-1">Aptech — Software Engineering</p>
+          </div>
+          <div class="glass p-5 rounded-2xl reveal fade-up">
+            <h3 class="font-semibold text-white">Core Stack</h3>
+            <p class="text-gray-400 text-sm mt-1">Laravel, PHP, JavaScript, Flutter, ASP.NET, MySQL</p>
+          </div>
+          <div class="glass p-5 rounded-2xl reveal fade-up">
+            <h3 class="font-semibold text-white">Strengths</h3>
+            <p class="text-gray-400 text-sm mt-1">Problem-solving, consistency, ownership</p>
+          </div>
+          <div class="glass p-5 rounded-2xl reveal fade-up">
+            <h3 class="font-semibold text-white">Interests</h3>
+            <p class="text-gray-400 text-sm mt-1">Web apps, mobile apps, system design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career & Experience -->
+  <section id="career" class="section">
+    <div class="container">
+      <h2 class="section-title reveal fade-up">Career & Experience</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Skills -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="service-card reveal fade-up">
+            <h3 class="font-semibold">Laravel / PHP</h3>
+            <p class="text-gray-400 text-sm">Web apps & APIs</p>
+          </div>
+          <div class="service-card reveal fade-up">
+            <h3 class="font-semibold">JavaScript</h3>
+            <p class="text-gray-400 text-sm">Frontend + dynamic functionality</p>
+          </div>
+          <div class="service-card reveal fade-up">
+            <h3 class="font-semibold">Flutter</h3>
+            <p class="text-gray-400 text-sm">Cross-platform mobile apps</p>
+          </div>
+          <div class="service-card reveal fade-up">
+            <h3 class="font-semibold">ASP.NET MVC</h3>
+            <p class="text-gray-400 text-sm">Enterprise-grade applications</p>
+          </div>
+          <div class="service-card reveal fade-up">
+            <h3 class="font-semibold">MySQL / SQL Server</h3>
+            <p class="text-gray-400 text-sm">DB design & optimization</p>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="glass p-6 rounded-2xl reveal fade-up">
+          <h3 class="font-semibold text-white">2019 – 2023</h3>
+          <p class="text-gray-300">Student & Developer — Aptech + Personal Projects</p>
+          <p class="text-gray-400 mt-2 text-sm">Worked on academic and freelance-level projects including hospital systems, city guide apps, and online auction systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title reveal fade-up">Services</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="service-card reveal fade-up">
+          <h3 class="font-semibold">Custom Web Development</h3>
+          <p class="text-gray-400 text-sm">Modern, scalable websites & dashboards.</p>
+        </div>
+        <div class="service-card reveal fade-up">
+          <h3 class="font-semibold">Mobile App Development</h3>
+          <p class="text-gray-400 text-sm">iOS & Android with Flutter.</p>
+        </div>
+        <div class="service-card reveal fade-up">
+          <h3 class="font-semibold">Database Design & Optimization</h3>
+          <p class="text-gray-400 text-sm">Efficient schemas, indexing & tuning.</p>
+        </div>
+        <div class="service-card reveal fade-up">
+          <h3 class="font-semibold">UI & UX Implementation</h3>
+          <p class="text-gray-400 text-sm">Pixel-perfect, accessible interfaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title reveal fade-up">Projects</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project Card Template -->
+        <article class="project-card reveal fade-up">
+          <img class="project-img" src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop" alt="City Guide App" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">City Guide App</h3>
+            <p class="text-gray-400 text-sm mt-1">Navigation + local discovery</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-300">
+              <span class="tag">Flutter</span>
+              <span class="tag">Google Maps</span>
+              <span class="tag">REST</span>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a href="#" class="btn-secondary">Live Demo</a>
+              <a href="#" class="btn-ghost">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal fade-up">
+          <img class="project-img" src="https://images.unsplash.com/photo-1588771930290-43acffd2d969?q=80&w=1200&auto=format&fit=crop" alt="Hospital Organization" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Hospital Organization (Tabib)</h3>
+            <p class="text-gray-400 text-sm mt-1">Appointments, reports, video calls, donation features</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-300">
+              <span class="tag">Laravel</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Twilio</span>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a href="#" class="btn-secondary">Live Demo</a>
+              <a href="#" class="btn-ghost">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal fade-up">
+          <img class="project-img" src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1200&auto=format&fit=crop" alt="Online Auction System" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Online Auction System</h3>
+            <p class="text-gray-400 text-sm mt-1">ASP.NET MVC + SQL Server</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-300">
+              <span class="tag">ASP.NET</span>
+              <span class="tag">SQL Server</span>
+              <span class="tag">C#</span>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a href="#" class="btn-secondary">Live Demo</a>
+              <a href="#" class="btn-ghost">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal fade-up">
+          <img class="project-img" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1200&auto=format&fit=crop" alt="Saloon Management System" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Saloon Management System</h3>
+            <p class="text-gray-400 text-sm mt-1">PHP + MySQL</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-300">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Tailwind</span>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a href="#" class="btn-secondary">Live Demo</a>
+              <a href="#" class="btn-ghost">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal fade-up">
+          <img class="project-img" src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=1200&auto=format&fit=crop" alt="Musical Website" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Musical Website</h3>
+            <p class="text-gray-400 text-sm mt-1">HTML, CSS, JavaScript</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs text-gray-300">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="mt-5 flex gap-3">
+              <a href="#" class="btn-secondary">Live Demo</a>
+              <a href="#" class="btn-ghost">Source Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title reveal fade-up">Testimonials</h2>
+      <div class="glass rounded-2xl p-6 overflow-hidden reveal fade-up">
+        <div id="testimonial-track" class="flex transition-transform duration-700 ease-out">
+          <figure class="testimonial-slide w-full shrink-0">
+            <blockquote class="text-gray-200 text-lg">“Moinuddin’s dedication and technical skills made the project seamless.”</blockquote>
+            <figcaption class="mt-2 text-gray-400 text-sm">— Client Feedback</figcaption>
+          </figure>
+          <figure class="testimonial-slide w-full shrink-0">
+            <blockquote class="text-gray-200 text-lg">“Professional, proactive, and delivers quality work.”</blockquote>
+            <figcaption class="mt-2 text-gray-400 text-sm">— Project Owner</figcaption>
+          </figure>
+          <figure class="testimonial-slide w-full shrink-0">
+            <blockquote class="text-gray-200 text-lg">“Understands requirements and suggests better solutions.”</blockquote>
+            <figcaption class="mt-2 text-gray-400 text-sm">— Team Lead</figcaption>
+          </figure>
+        </div>
+        <div class="mt-4 flex justify-center gap-2">
+          <button class="dot" data-index="0" aria-label="Slide 1"></button>
+          <button class="dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="dot" data-index="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="section">
+    <div class="container">
+      <h2 class="section-title reveal fade-up">Blog</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="project-card reveal fade-up">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Getting started with Laravel</h3>
+            <p class="text-gray-400 text-sm mt-1">A quick guide to structuring your first Laravel project.</p>
+            <a href="#" class="btn-ghost mt-4 inline-block">Read More</a>
+          </div>
+        </article>
+        <article class="project-card reveal fade-up">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">ASP.NET MVC Tips</h3>
+            <p class="text-gray-400 text-sm mt-1">Patterns and practices for clean controllers.</p>
+            <a href="#" class="btn-ghost mt-4 inline-block">Read More</a>
+          </div>
+        </article>
+        <article class="project-card reveal fade-up">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Designing scalable databases</h3>
+            <p class="text-gray-400 text-sm mt-1">Indexing strategies and schema design.</p>
+            <a href="#" class="btn-ghost mt-4 inline-block">Read More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="section">
+    <div class="container">
+      <div class="glass rounded-2xl p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 reveal fade-up">
+        <div>
+          <h3 class="text-xl font-semibold">Stay up to date with my latest work</h3>
+          <p class="text-gray-400 text-sm">Subscribe to my newsletter.</p>
+        </div>
+        <form id="newsletter-form" class="flex w-full md:w-auto gap-2">
+          <input type="email" name="email" required placeholder="Enter your email" class="w-full md:w-80 glass-input" />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title reveal fade-up">Contact Me</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-2xl reveal fade-up">
+          <h3 class="font-semibold text-white">Get in touch</h3>
+          <ul class="mt-4 space-y-2 text-gray-300">
+            <li><span class="text-gray-400">Email:</span> <a href="mailto:moin@example.com" class="link">moin@example.com</a></li>
+            <li><span class="text-gray-400">Phone:</span> <a href="tel:+920000000000" class="link">+92 000 000 0000</a></li>
+            <li><span class="text-gray-400">GitHub:</span> <a href="https://github.com/your-github" target="_blank" class="link">github.com/your-github</a></li>
+          </ul>
+        </div>
+        <form id="contact-form" class="glass p-6 rounded-2xl grid gap-4 reveal fade-up">
+          <div>
+            <label class="label" for="name">Name</label>
+            <input id="name" name="name" type="text" required class="glass-input" placeholder="Your name" />
+          </div>
+          <div>
+            <label class="label" for="email">Email</label>
+            <input id="email" name="email" type="email" required class="glass-input" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label class="label" for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required class="glass-input resize-none" placeholder="How can I help you?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+          <p id="form-status" class="text-sm text-gray-400"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-white/10">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+        <p>© 2025 Moinuddin — All rights reserved.</p>
+        <nav class="flex flex-wrap gap-4">
+          <a href="#about" class="link">About Me</a>
+          <a href="#career" class="link">Career</a>
+          <a href="#blog" class="link">Blog</a>
+          <a href="#projects" class="link">Gallery</a>
+          <a href="#contact" class="link">Contact Me</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
